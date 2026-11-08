@@ -5,6 +5,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Settings — UniProcur</title>
   <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="settings.css" />
+  <script src="settings.js" defer></script>
 </head>
-<body></body>
+<body>
+  <main class="settings-page">
+    <img class="settings-page-background" src="assets/settings-background.png" alt="" aria-hidden="true" />
+    <div class="settings-content">
+      <h1 class="settings-title">Settings</h1>
+
+      <div class="settings-tabs" role="tablist" aria-label="Settings sections">
+        <button class="settings-tab is-active" id="settings-tab-profile" type="button" role="tab" aria-selected="true" aria-controls="settings-panel-profile" tabindex="0" data-settings-tab="profile">Profile</button>
+        <button class="settings-tab" id="settings-tab-security" type="button" role="tab" aria-selected="false" aria-controls="settings-panel-security" tabindex="-1" data-settings-tab="security">Security</button>
+        <button class="settings-tab" id="settings-tab-notifications" type="button" role="tab" aria-selected="false" aria-controls="settings-panel-notifications" tabindex="-1" data-settings-tab="notifications">Notifications</button>
+      </div>
+
+      <section class="settings-panel settings-profile-panel" id="settings-panel-profile" role="tabpanel" aria-labelledby="settings-tab-profile" data-settings-panel="profile">
+        <div class="settings-profile-header">
+          <img class="settings-profile-photo" src="assets/settings-profile.png" alt="" />
+          <div class="settings-profile-summary">
+            <h2 data-profile-name></h2>
+            <p data-profile-email></p>
+            <span class="settings-photo-action">Change Profile Picture</span>
+          </div>
+        </div>
+        <p class="settings-profile-status" role="alert" hidden></p>
+
+        <div class="settings-profile-fields">
+          <label class="settings-field">
+            <span>Full name</span>
+            <input type="text" readonly data-profile-name-input />
+          </label>
+          <label class="settings-field">
+            <span>Email Address</span>
+            <input type="email" readonly data-profile-email-input />
+          </label>
+          <label class="settings-field">
+            <span>Company</span>
+            <input type="text" readonly />
+          </label>
+          <label class="settings-field">
+            <span>Role</span>
+            <input class="settings-role-field" type="text" value="Manager" readonly />
+          </label>
+          <label class="settings-field">
+            <span>Contact Number</span>
+            <input type="tel" readonly />
+          </label>
+        </div>
+      </section>
+
+      <section class="settings-panel settings-security-panel" id="settings-panel-security" role="tabpanel" aria-labelledby="settings-tab-security" data-settings-panel="security" hidden>
+        <h2 class="settings-section-title">Need Security Help?</h2>
+        <p class="settings-section-description">Your account security (Passwords, 2FA, Active Sessions) is managed by the HR Department.</p>
+        <div class="settings-security-cards">
+          <article class="settings-security-card">
+            <h3>Email HR Support</h3>
+            <p>Contact details are not configured.</p>
+          </article>
+          <article class="settings-security-card">
+            <h3>Call IT Expert</h3>
+            <p>Contact details are not configured.</p>
+          </article>
+        </div>
+        <p class="settings-security-action">Report Lost Device / Suspicious Login</p>
+      </section>
+
+      <section class="settings-panel settings-notifications-panel" id="settings-panel-notifications" role="tabpanel" aria-labelledby="settings-tab-notifications" data-settings-panel="notifications" hidden>
+        <h2 class="settings-section-title">Notification</h2>
+        <p class="settings-section-description">Choose which email alerts you want to receive.</p>
+        <div class="settings-notification-columns">
+          <div class="settings-notification-column">
+            <section class="settings-notification-group" aria-labelledby="settings-notification-purchase-request">
+              <h3 id="settings-notification-purchase-request">Purchase Request</h3>
+              <div class="settings-notification-item">
+                <article class="settings-notification-card">
+                  <h4>PR is Approved / Rejected</h4>
+                  <p>Sent to Manager or returned to Draft</p>
+                </article>
+                <button class="settings-notification-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="PR is Approved or Rejected email alerts" data-notification-toggle>On</button>
+              </div>
+            </section>
+            <section class="settings-notification-group" aria-labelledby="settings-notification-rfq">
+              <h3 id="settings-notification-rfq">RFQs &amp; Quotations</h3>
+              <div class="settings-notification-items">
+                <div class="settings-notification-item">
+                  <article class="settings-notification-card">
+                    <h4>New Quotation Received</h4>
+                    <p>When a supplier submits a quote</p>
+                  </article>
+                  <button class="settings-notification-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="New quotation received email alerts" data-notification-toggle>On</button>
+                </div>
+                <div class="settings-notification-item">
+                  <article class="settings-notification-card">
+                    <h4>RFQ Deadline Approaching</h4>
+                    <p>2 days before the submission deadline</p>
+                  </article>
+                  <button class="settings-notification-toggle" type="button" role="switch" aria-checked="false" aria-label="RFQ deadline approaching email alerts" data-notification-toggle>Off</button>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="settings-notification-column">
+            <section class="settings-notification-group" aria-labelledby="settings-notification-orders">
+              <h3 id="settings-notification-orders">Purchase Orders and Receiving</h3>
+              <div class="settings-notification-item">
+                <article class="settings-notification-card">
+                  <h4>PO is Approved by Manager</h4>
+                  <p>Ready to be sent to the supplier</p>
+                </article>
+                <button class="settings-notification-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="Purchase order approved email alerts" data-notification-toggle>On</button>
+              </div>
+            </section>
+            <section class="settings-notification-group" aria-labelledby="settings-notification-system">
+              <h3 id="settings-notification-system">System Updates</h3>
+              <div class="settings-notification-item">
+                <article class="settings-notification-card">
+                  <h4>Daily Task Summary</h4>
+                  <p>A daily 8:00 AM email of your pending work</p>
+                </article>
+                <button class="settings-notification-toggle" type="button" role="switch" aria-checked="false" aria-label="Daily task summary email alerts" data-notification-toggle>Off</button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
 </html>
