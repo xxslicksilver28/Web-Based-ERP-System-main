@@ -90,62 +90,10 @@
     </header>
 
     <section class="module-workspace">
-      <section class="supplier-page" id="supplierPage" aria-labelledby="supplierPageTitle">
-        <div class="supplier-heading">
-          <div><h2 id="supplierPageTitle">Suppliers</h2><p>Manage your registered suppliers and contact details.</p></div>
-          <button class="primary-btn" id="addSupplier" type="button"><span aria-hidden="true">＋</span> Add Supplier</button>
-        </div>
-        <section class="supplier-card" aria-label="Supplier directory">
-          <div class="supplier-toolbar">
-            <div><h3>Supplier Directory</h3><span id="supplierSummary" class="supplier-summary"></span></div>
-            <label class="supplier-search"><span class="visually-hidden">Search suppliers</span><input id="supplierSearch" type="search" placeholder="Search suppliers..." autocomplete="off"></label>
-          </div>
-          <div class="supplier-table-wrap">
-            <table class="supplier-table">
-              <thead><tr><th>Supplier</th><th>Contact Person</th><th>Email</th><th>Phone</th><th><span class="visually-hidden">Actions</span></th></tr></thead>
-              <tbody id="supplierRows"></tbody>
-            </table>
-            <div id="supplierEmptyState" class="supplier-empty" hidden>No suppliers found. Add a supplier or try a different search.</div>
-          </div>
-        </section>
-      </section>
+      <section class="supplier-page" id="supplierPage"></section>
     </section>
   </main>
 
-  <div class="modal-backdrop" id="supplierModal" hidden>
-    <section class="supplier-modal" role="dialog" aria-modal="true" aria-labelledby="supplierModalTitle">
-      <button class="modal-close" id="closeSupplierModal" type="button" aria-label="Close">×</button>
-      <small class="modal-kicker">SUPPLIER DIRECTORY</small>
-      <h2 id="supplierModalTitle">Add Supplier</h2>
-      <p class="supplier-modal-copy">Enter the supplier's company and contact details.</p>
-      <form id="supplierForm">
-        <input id="supplierId" type="hidden">
-        <div class="supplier-form-grid">
-          <label class="supplier-field supplier-field-wide">Supplier name <span aria-hidden="true">*</span>
-            <input id="supplierName" name="name" type="text" maxlength="120" required autocomplete="organization" placeholder="Company name">
-          </label>
-          <label class="supplier-field">Contact person
-            <input id="supplierContact" name="contact" type="text" maxlength="100" autocomplete="name" placeholder="Contact name">
-          </label>
-          <label class="supplier-field">Email
-            <input id="supplierEmail" name="email" type="email" maxlength="254" autocomplete="email" placeholder="name@company.com">
-          </label>
-          <label class="supplier-field">Phone
-            <input id="supplierPhone" name="phone" type="tel" maxlength="40" autocomplete="tel" placeholder="Phone number">
-          </label>
-          <label class="supplier-field">Address
-            <input id="supplierAddress" name="address" type="text" maxlength="200" autocomplete="street-address" placeholder="Business address">
-          </label>
-        </div>
-        <div class="supplier-form-actions">
-          <button class="cancel-btn" id="cancelSupplierModal" type="button">Cancel</button>
-          <button class="primary-btn" id="saveSupplier" type="submit">Save Supplier</button>
-        </div>
-      </form>
-    </section>
-  </div>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="../app.js"></script>
-  <script src="suppliers.js"></script>
 </body>
 </html>
