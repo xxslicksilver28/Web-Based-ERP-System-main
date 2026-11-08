@@ -1,0 +1,314 @@
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background: transparent;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.support-page {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  padding: 0 0 18px;
+  color: #171717;
+  background: transparent;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.support-page .support-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 164px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px clamp(22px, 4vw, 48px);
+  border: 1px solid rgba(0, 0, 0, .7);
+  border-radius: 20px;
+  background:
+    linear-gradient(100deg, rgba(210, 210, 210, .82), rgba(175, 175, 175, .68)),
+    url("assets/support-hero-image-a.jpg") center 48% / cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .22);
+}
+
+.support-page .support-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.support-page .support-kicker {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 20px;
+}
+
+.support-page .support-hero h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: -.04em;
+  line-height: 1.15;
+}
+
+.support-page .support-hero > p {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.support-page .support-search {
+  display: flex;
+  width: min(68%, 540px);
+  min-width: min(100%, 280px);
+  height: 42px;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 6px 4px 10px;
+  border: 1px solid rgba(255, 255, 255, .9);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .72);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+}
+
+.support-page .support-search svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  fill: none;
+  stroke: #171717;
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+.support-page .support-search input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #171717;
+  font: inherit;
+  font-size: 13px;
+}
+
+.support-page .support-search input::placeholder {
+  color: #171717;
+  opacity: 1;
+}
+
+.support-page .support-search input:focus-visible {
+  outline: 2px solid #8d0807;
+  outline-offset: 1px;
+}
+
+.support-page .support-search button {
+  height: 30px;
+  flex: none;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  font-size: 11px;
+}
+
+.support-page .support-search button:hover {
+  background: #f0f0f0;
+}
+
+.support-page .support-faq {
+  display: grid;
+  min-height: 350px;
+  flex: 1;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  overflow: hidden;
+  border-radius: 15px;
+  background: #d9d9d9;
+}
+
+.support-page .support-faq-intro {
+  display: flex;
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 28px 20px;
+}
+
+.support-page .support-faq-intro::before,
+.support-page .support-faq-intro::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.support-page .support-faq-intro::before {
+  z-index: 0;
+  background: url("assets/support-faq-image-a.jpg") center / cover;
+  filter: grayscale(1) brightness(0.8) contrast(1.05);
+}
+
+.support-page .support-faq-intro::after {
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.35) 100%);
+}
+
+.support-page .support-faq-intro > div {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 400px);
+  text-align: right;
+}
+
+.support-page .support-faq-intro h2 {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(34px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  line-height: .94;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+}
+
+.support-page .support-faq-intro p {
+  margin: 12px 0 0;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.35;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+}
+
+.support-page .support-faq-panel {
+  min-width: 0;
+  padding: 16px;
+  background: #d9d9d9;
+}
+
+.support-page .support-faq-list {
+  display: grid;
+  align-content: start;
+  gap: 5px;
+}
+
+.support-page .support-faq-item {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #7b7b7b;
+  border-radius: 5px;
+  background: #fff;
+  color: #111;
+}
+
+.support-page .support-faq-item summary {
+  display: flex;
+  min-height: 25px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 11px;
+  line-height: 1.25;
+  list-style: none;
+}
+
+.support-page .support-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.support-page .support-faq-item summary > span {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  transform: rotate(45deg) translateY(-2px);
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transition: transform .15s ease;
+}
+
+.support-page .support-faq-item[open] summary > span {
+  transform: rotate(225deg) translate(-2px, -1px);
+}
+
+.support-page .support-faq-item > p {
+  margin: 0;
+  padding: 7px 9px 10px;
+  border-top: 1px solid #e3e3e3;
+  color: #4a4a4a;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.support-page .support-faq-empty {
+  margin: 0;
+  padding: 14px 8px;
+  color: #555;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.support-page .support-faq-empty[hidden] {
+  display: none;
+}
+
+@media (max-width: 620px) {
+  .support-page {
+    gap: 14px;
+  }
+
+  .support-page .support-search {
+    width: 100%;
+  }
+
+  .support-page .support-faq {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .support-page .support-faq-intro {
+    min-height: 230px;
+  }
+
+  .support-page .support-faq-intro h2 {
+    font-size: clamp(36px, 10vw, 54px);
+  }
+
+  .support-page .support-faq-panel {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .support-page .support-hero {
+    padding: 16px;
+  }
+
+  .support-page .support-hero h1 {
+    font-size: 22px;
+  }
+
+  .support-page .support-faq-intro {
+    min-height: 200px;
+    padding: 22px 16px;
+  }
+
+  .support-page .support-faq-item summary {
+    font-size: 10px;
+  }
+}

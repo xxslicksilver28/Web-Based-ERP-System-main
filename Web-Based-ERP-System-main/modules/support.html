@@ -5,6 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support — UniProcur</title>
   <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="support.css" />
 </head>
-<body></body>
+<body>
+  <main class="support-page">
+    <section class="support-hero" aria-labelledby="supportTitle">
+      <span class="support-kicker">SUPPORT CENTER</span>
+      <h1 id="supportTitle">How can we help you today?</h1>
+      <p>Find step-by-step guidance for every part of your procurement workflow.</p>
+      <form class="support-search" id="supportSearch" role="search">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="10.8" cy="10.8" r="6.8"></circle>
+          <path d="m16 16 4.2 4.2"></path>
+        </svg>
+        <label class="visually-hidden" for="supportSearchInput">Search support questions</label>
+        <input id="supportSearchInput" type="search" placeholder="search" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <section class="support-faq" aria-labelledby="supportFaqTitle">
+      <div class="support-faq-intro">
+        <div>
+          <h2 id="supportFaqTitle"><span>Frequently</span><span>asked</span><span>questions</span></h2>
+          <p>Get quick answers to common questions about procurement.</p>
+        </div>
+      </div>
+      <div class="support-faq-panel">
+        <div class="support-faq-list" id="supportFaqList">
+          <details class="support-faq-item">
+            <summary>How do I get an account?<span aria-hidden="true"></span></summary>
+            <p>Ask your workspace manager to create an account or invite you to the procurement workspace.</p>
+          </details>
+          <details class="support-faq-item">
+            <summary>Why change my password?<span aria-hidden="true"></span></summary>
+            <p>Keep your account secure by using a unique password. If you need help updating your sign-in details, contact your workspace manager.</p>
+          </details>
+          <details class="support-faq-item">
+            <summary>Why can't I register directly?<span aria-hidden="true"></span></summary>
+            <p>Accounts are managed by your organization so access stays limited to approved team members. Contact your workspace manager for access.</p>
+          </details>
+          <details class="support-faq-item">
+            <summary>How to create a PR?<span aria-hidden="true"></span></summary>
+            <p>Open Purchase Request, add the items and quantities you need, then submit the request for review.</p>
+          </details>
+          <details class="support-faq-item">
+            <summary>What if my PR is rejected?<span aria-hidden="true"></span></summary>
+            <p>Review the rejection notes, update the request if needed, and submit it again for approval.</p>
+          </details>
+          <details class="support-faq-item">
+            <summary>What is an RFQ?<span aria-hidden="true"></span></summary>
+            <p>A request for quotation asks suppliers to provide pricing and terms for the items you need.</p>
+          </details>
+          <details class="support-faq-item">
+            <summary>How do I compare quotations?<span aria-hidden="true"></span></summary>
+            <p>Compare each supplier's item pricing, quantities, delivery estimates, and terms before selecting an offer.</p>
+          </details>
+          <details class="support-faq-item">
+            <summary>What is a Purchase Order?<span aria-hidden="true"></span></summary>
+            <p>A Purchase Order records the approved items, quantities, supplier, and terms for a purchase.</p>
+          </details>
+          <details class="support-faq-item">
+            <summary>Can I edit a sent PO?<span aria-hidden="true"></span></summary>
+            <p>Contact the person managing the order before making changes to a Purchase Order that has already been sent.</p>
+          </details>
+          <details class="support-faq-item">
+            <summary>Why can't I order extra quantities?<span aria-hidden="true"></span></summary>
+            <p>Order quantities may be limited to what was approved. Request an amendment if you need additional items.</p>
+          </details>
+          <details class="support-faq-item">
+            <summary>What is Goods Receiving?<span aria-hidden="true"></span></summary>
+            <p>Goods Receiving records the items delivered against a Purchase Order so the received quantities can be checked.</p>
+          </details>
+          <details class="support-faq-item">
+            <summary>What follows receipt confirmation?<span aria-hidden="true"></span></summary>
+            <p>After confirming receipt, keep the delivery record with the order and follow your organization's next invoice or payment steps.</p>
+          </details>
+        </div>
+        <p class="support-faq-empty" id="supportFaqEmpty" hidden>No questions match that search. Try another term.</p>
+      </div>
+    </section>
+  </main>
+  <script src="support.js"></script>
+</body>
 </html>
