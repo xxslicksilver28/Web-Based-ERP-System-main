@@ -17,10 +17,7 @@
       <h1 id="supportTitle">How can we help you today?</h1>
       <p>Find step-by-step guidance for every part of your procurement workflow.</p>
       <form class="support-search" id="supportSearch" role="search">
-        <svg aria-hidden="true" viewBox="0 0 24 24">
-          <circle cx="10.8" cy="10.8" r="6.8"></circle>
-          <path d="m16 16 4.2 4.2"></path>
-        </svg>
+        <span class="support-search-icon" aria-hidden="true"></span>
         <label class="visually-hidden" for="supportSearchInput">Search support questions</label>
         <input id="supportSearchInput" type="search" placeholder="search" autocomplete="off">
         <button type="submit">Search</button>
@@ -37,58 +34,209 @@
       <div class="support-faq-panel">
         <div class="support-faq-list" id="supportFaqList">
           <details class="support-faq-item">
-            <summary>How do I get an account?<span aria-hidden="true"></span></summary>
-            <p>Ask your workspace manager to create an account or invite you to the procurement workspace.</p>
+            <summary>What can I see on the Dashboard?<span aria-hidden="true"></span></summary>
+            <p>The Dashboard summarizes your procurement activity, including pending transactions and recent request or order updates.</p>
           </details>
           <details class="support-faq-item">
-            <summary>Why change my password?<span aria-hidden="true"></span></summary>
-            <p>Keep your account secure by using a unique password. If you need help updating your sign-in details, contact your workspace manager.</p>
+            <summary>Can I track pending transactions?<span aria-hidden="true"></span></summary>
+            <p>Yes. Review pending items from the Dashboard or open the related Purchase Request or Purchase Order to check its current status.</p>
           </details>
           <details class="support-faq-item">
-            <summary>Why can't I register directly?<span aria-hidden="true"></span></summary>
-            <p>Accounts are managed by your organization so access stays limited to approved team members. Contact your workspace manager for access.</p>
+            <summary>How do I review a PR?<span aria-hidden="true"></span></summary>
+            <p>Open Purchase Request and select a request awaiting review. Check its item details, quantities, reference information, and supporting notes before deciding.</p>
           </details>
           <details class="support-faq-item">
-            <summary>How to create a PR?<span aria-hidden="true"></span></summary>
-            <p>Open Purchase Request, add the items and quantities you need, then submit the request for review.</p>
+            <summary>Can I approve or reject a PR?<span aria-hidden="true"></span></summary>
+            <p>Open a pending request and choose the appropriate review action. If you reject it, include a clear reason so the requester knows what needs to change.</p>
           </details>
           <details class="support-faq-item">
-            <summary>What if my PR is rejected?<span aria-hidden="true"></span></summary>
-            <p>Review the rejection notes, update the request if needed, and submit it again for approval.</p>
+            <summary>What if a support concern is unresolved?<span aria-hidden="true"></span></summary>
+            <p>Use Contact support to describe the issue and include its ticket or procurement reference. You can check for updates in Recent support requests.</p>
           </details>
           <details class="support-faq-item">
-            <summary>What is an RFQ?<span aria-hidden="true"></span></summary>
-            <p>A request for quotation asks suppliers to provide pricing and terms for the items you need.</p>
+            <summary>Can I view resolved concerns?<span aria-hidden="true"></span></summary>
+            <p>Resolved concerns appear in the support request history with a Resolved status. Use the request details to review the recorded subject and category.</p>
           </details>
           <details class="support-faq-item">
-            <summary>How do I compare quotations?<span aria-hidden="true"></span></summary>
-            <p>Compare each supplier's item pricing, quantities, delivery estimates, and terms before selecting an offer.</p>
+            <summary>What happens after PR approval?<span aria-hidden="true"></span></summary>
+            <p>Approval advances the purchase through your procurement workflow. Follow the request and its related Purchase Order for the next status updates.</p>
           </details>
           <details class="support-faq-item">
-            <summary>What is a Purchase Order?<span aria-hidden="true"></span></summary>
-            <p>A Purchase Order records the approved items, quantities, supplier, and terms for a purchase.</p>
+            <summary>How do I track a PO?<span aria-hidden="true"></span></summary>
+            <p>Open Purchase Order to review its status and details. If the order is associated with a container, check Containers for its shipment information.</p>
           </details>
           <details class="support-faq-item">
-            <summary>Can I edit a sent PO?<span aria-hidden="true"></span></summary>
-            <p>Contact the person managing the order before making changes to a Purchase Order that has already been sent.</p>
+            <summary>Can I update product details?<span aria-hidden="true"></span></summary>
+            <p>Open the relevant procurement record and check which details are editable. If the information is locked or needs correction, contact support with the record reference.</p>
           </details>
           <details class="support-faq-item">
-            <summary>Why can't I order extra quantities?<span aria-hidden="true"></span></summary>
-            <p>Order quantities may be limited to what was approved. Request an amendment if you need additional items.</p>
+            <summary>How do I generate reports?<span aria-hidden="true"></span></summary>
+            <p>Open Reports, choose the report you need, and set its available filters before reviewing or exporting the results.</p>
           </details>
           <details class="support-faq-item">
-            <summary>What is Goods Receiving?<span aria-hidden="true"></span></summary>
-            <p>Goods Receiving records the items delivered against a Purchase Order so the received quantities can be checked.</p>
+            <summary>What if I encounter an error?<span aria-hidden="true"></span></summary>
+            <p>Retry the action and note what you were doing if the error continues. Contact support with the affected record reference and a screenshot if possible.</p>
           </details>
           <details class="support-faq-item">
-            <summary>What follows receipt confirmation?<span aria-hidden="true"></span></summary>
-            <p>After confirming receipt, keep the delivery record with the order and follow your organization's next invoice or payment steps.</p>
+            <summary>How do I track my concerns?<span aria-hidden="true"></span></summary>
+            <p>Check Recent support requests for the ticket status. Open a request to review its subject, category, and latest recorded status.</p>
           </details>
         </div>
         <p class="support-faq-empty" id="supportFaqEmpty" hidden>No questions match that search. Try another term.</p>
       </div>
     </section>
+
+    <section class="support-requests" aria-labelledby="supportRequestsTitle">
+      <header class="support-requests-header">
+        <div class="support-requests-heading">
+          <span class="support-requests-icon" aria-hidden="true">
+            <svg width="33.3333" height="26.6667" viewBox="0 0 33.3333 26.6667" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.6667 20C22.9928 20 24.2641 20.5272 25.2018 21.4648C25.7336 21.9966 26.1274 22.6377 26.3737 23.3333H28.3333C28.7754 23.3333 29.1992 23.1576 29.5117 22.8451C29.8243 22.5325 30 22.1087 30 21.6667V5C30 4.55797 29.8243 4.13418 29.5117 3.82161C29.1992 3.50905 28.7754 3.33333 28.3333 3.33333H26.3737C26.1274 4.02898 25.7336 4.67004 25.2018 5.20182C24.2641 6.1395 22.9927 6.66667 21.6667 6.66667C20.3406 6.66667 19.0692 6.1395 18.1315 5.20182C17.5997 4.67004 17.206 4.02898 16.9596 3.33333H5C4.55797 3.33333 4.13417 3.50905 3.82161 3.82161C3.50905 4.13417 3.33333 4.55797 3.33333 5V21.6667C3.33333 22.1087 3.50905 22.5325 3.82161 22.8451C4.13418 23.1576 4.55797 23.3333 5 23.3333H16.9596C17.206 22.6377 17.5997 21.9966 18.1315 21.4648C19.0692 20.5272 20.3406 20 21.6667 20ZM20 16.6667V15.8333C20 14.9129 20.7462 14.1667 21.6667 14.1667C22.5871 14.1667 23.3333 14.9129 23.3333 15.8333V16.6667C23.3333 17.5871 22.5871 18.3333 21.6667 18.3333C20.7462 18.3333 20 17.5871 20 16.6667ZM20 10.8333V10C20 9.07953 20.7462 8.33333 21.6667 8.33333C22.5871 8.33333 23.3333 9.07953 23.3333 10V10.8333C23.3333 11.7538 22.5871 12.5 21.6667 12.5C20.7462 12.5 20 11.7538 20 10.8333ZM33.3333 21.6667C33.3333 22.9928 32.8062 24.2641 31.8685 25.2018C30.9308 26.1395 29.6594 26.6667 28.3333 26.6667H25C24.0795 26.6667 23.3333 25.9205 23.3333 25C23.3333 24.558 23.1576 24.1342 22.8451 23.8216C22.5325 23.5091 22.1087 23.3333 21.6667 23.3333C21.2246 23.3333 20.8008 23.5091 20.4883 23.8216C20.1757 24.1342 20 24.558 20 25C20 25.9205 19.2538 26.6667 18.3333 26.6667H5C3.67392 26.6667 2.40252 26.1395 1.46484 25.2018C0.527162 24.2641 0 22.9927 0 21.6667V5C0 3.67392 0.527162 2.40253 1.46484 1.46484C2.40253 0.527162 3.67392 0 5 0H18.3333C19.2538 0 20 0.746192 20 1.66667C20 2.10869 20.1757 2.53249 20.4883 2.84505C20.8008 3.15761 21.2246 3.33333 21.6667 3.33333C22.1087 3.33333 22.5325 3.15761 22.8451 2.84505C23.1576 2.53249 23.3333 2.10869 23.3333 1.66667C23.3333 0.746192 24.0795 0 25 0H28.3333C29.6594 0 30.9308 0.527162 31.8685 1.46484C32.8062 2.40253 33.3333 3.67392 33.3333 5V21.6667Z" fill="black"/>
+            </svg>
+          </span>
+          <div>
+            <h2 id="supportRequestsTitle">Recent support requests</h2>
+            <p>Track updates from the buyer support team.</p>
+          </div>
+        </div>
+        <a class="support-view-all" href="#supportRequestsTable">View all support requests <span aria-hidden="true">→</span></a>
+      </header>
+      <div class="support-table-wrap">
+        <table class="support-requests-table" id="supportRequestsTable" aria-describedby="supportSampleDisclosure">
+          <caption class="visually-hidden" id="supportSampleDisclosure">Example records from the design; live support data is not connected.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Ticket no.</th>
+              <th scope="col">Subject</th>
+              <th scope="col">Category</th>
+              <th scope="col">Date</th>
+              <th scope="col">Status</th>
+              <th scope="col"><span class="visually-hidden">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-ticket-id="SUP-0001">
+              <td>SUP-0001</td>
+              <td>Unable to Approve PR</td>
+              <td>Purchase Request</td>
+              <td><time datetime="2025-10-01">Oct 1, 2025</time></td>
+              <td><span class="support-status support-status-open">Open</span></td>
+              <td><button class="support-ticket-view" type="button" aria-haspopup="dialog">View</button></td>
+            </tr>
+            <tr data-ticket-id="SUP-0002">
+              <td>SUP-0002</td>
+              <td>Missing Purchase Records</td>
+              <td>Purchase Request</td>
+              <td><time datetime="2025-09-29">Sep 29, 2025</time></td>
+              <td><span class="support-status support-status-resolved">Resolved</span></td>
+              <td><button class="support-ticket-view" type="button" aria-haspopup="dialog">View</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="support-contact" aria-labelledby="supportContactTitle">
+      <header class="support-contact-header">
+        <h2 id="supportContactTitle">Contact support</h2>
+        <p>Can't find an answer? Contact the support team for assistance.</p>
+      </header>
+      <form class="support-contact-form" id="supportContactForm">
+        <div class="support-form-top">
+          <label class="support-field" for="supportIssueCategory">
+            <span>Issue category</span>
+            <select id="supportIssueCategory" name="category" required>
+              <option value="">Type</option>
+              <option>Dashboard</option>
+              <option>Purchase Request</option>
+              <option>Purchase Order</option>
+              <option>Containers</option>
+              <option>Suppliers</option>
+              <option>Reports</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="support-field" for="supportReference">
+            <span>Related reference (Optional)</span>
+            <input id="supportReference" name="reference" type="text" placeholder="PR-2026-01">
+          </label>
+        </div>
+
+        <label class="support-field support-subject-field" for="supportSubject">
+          <span>Subject</span>
+          <textarea id="supportSubject" name="subject" required placeholder="Include what happened and what you expected."></textarea>
+        </label>
+
+        <div class="support-upload">
+          <input class="visually-hidden support-file-input" id="supportFileInput" type="file" multiple
+            accept=".doc,.docx,.xls,.xlsx,.pdf,.jpg,.jpeg,.png" aria-describedby="supportUploadHint supportFileFeedback">
+          <label class="support-upload-dropzone" id="supportDropzone" for="supportFileInput">
+            <svg class="support-upload-icon" width="29.3096" height="21" viewBox="0 0 29.3096 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M13.3226 11.6156L12.1235 12.7641C11.8793 13.0047 11.5742 13.125 11.2083 13.125C10.8423 13.125 10.5257 12.9937 10.2584 12.7312C10.0141 12.4906 9.892 12.1844 9.892 11.8125C9.892 11.4406 10.0141 11.1344 10.2584 10.8937L13.7222 7.48124C13.9887 7.21874 14.2995 7.08749 14.6548 7.08749C15.0101 7.08749 15.3209 7.21874 15.5874 7.48124L19.0513 10.8937C19.2955 11.1344 19.423 11.4354 19.4336 11.7967C19.4443 12.1581 19.3168 12.4696 19.0513 12.7312C18.807 12.9719 18.5019 13.0979 18.136 13.1092C17.7701 13.1206 17.4534 13.0056 17.1861 12.7641L15.9871 11.6156V18.375H23.3145C24.2471 18.375 25.0353 18.0578 25.6792 17.4234C26.3232 16.789 26.6451 16.0125 26.6451 15.0937C26.6451 14.175 26.3232 13.3984 25.6792 12.7641C25.0353 12.1297 24.2471 11.8125 23.3145 11.8125H21.3161V9.18749C21.3161 7.37187 20.6664 5.824 19.367 4.54387C18.0676 3.26375 16.4969 2.62412 14.6548 2.625C12.8127 2.62587 11.242 3.26593 9.94263 4.54518C8.64323 5.82443 7.99354 7.37187 7.99354 9.18749H7.32741C6.03956 9.18749 4.94045 9.63593 4.03007 10.5328C3.1197 11.4297 2.66451 12.5125 2.66451 13.7812C2.66451 15.05 3.1197 16.1328 4.03007 17.0297C4.94045 17.9265 6.03956 18.375 7.32741 18.375H9.32579C9.70326 18.375 10.0199 18.501 10.2757 18.753C10.5315 19.005 10.6589 19.3165 10.658 19.6875C10.6572 20.0585 10.5293 20.3704 10.2744 20.6233C10.0195 20.8762 9.70326 21.0017 9.32579 21H7.32741C5.30682 21 3.58066 20.3109 2.14893 18.9328C0.717198 17.5547 0.000888171 15.8703 0 13.8797C0 12.1734 0.5218 10.6531 1.5654 9.31874C2.609 7.98437 3.97456 7.13124 5.66209 6.75937C6.21719 4.74687 7.32741 3.11719 8.99273 1.87031C10.658 0.623437 12.5454 0 14.6548 0C17.2527 0 19.4567 0.891624 21.2668 2.67487C23.0769 4.45812 23.9815 6.62899 23.9806 9.18749C25.5127 9.36249 26.7841 10.0135 27.7949 11.1405C28.8056 12.2675 29.3105 13.5852 29.3096 15.0937C29.3096 16.7344 28.727 18.1291 27.5617 19.278C26.3964 20.4269 24.9807 21.0009 23.3145 21H15.9871C15.2543 21 14.6273 20.7432 14.1059 20.2295C13.5846 19.7159 13.3234 19.0977 13.3226 18.375V11.6156Z" fill="black"/>
+            </svg>
+            <span><strong>Click to upload</strong> or drag &amp; drop</span>
+            <small id="supportUploadHint">DOC, XLS, PDF, JPG, and PNG up to 20MB</small>
+          </label>
+          <p class="support-file-feedback" id="supportFileFeedback" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="support-attachments">
+          <h3>Attach Files</h3>
+          <div class="support-attachment-list" id="supportAttachmentList" aria-live="polite">
+            <p class="support-attachments-empty">No files attached.</p>
+          </div>
+        </div>
+
+        <div class="support-form-footer">
+          <p class="support-submit-status" id="supportSubmitStatus" role="status" aria-live="polite"></p>
+          <button class="support-submit-button" type="submit">Submit Report Request</button>
+        </div>
+      </form>
+    </section>
+
+    <dialog class="support-ticket-dialog" id="supportTicketDialog" aria-labelledby="supportTicketDialogTitle">
+      <form method="dialog">
+        <button class="support-dialog-close" type="submit" aria-label="Close request details">×</button>
+      </form>
+      <h2 id="supportTicketDialogTitle">Support request</h2>
+      <dl>
+        <div><dt>Ticket no.</dt><dd id="supportDialogTicket"></dd></div>
+        <div><dt>Subject</dt><dd id="supportDialogSubject"></dd></div>
+        <div><dt>Category</dt><dd id="supportDialogCategory"></dd></div>
+        <div><dt>Date</dt><dd id="supportDialogDate"></dd></div>
+        <div><dt>Status</dt><dd id="supportDialogStatus"></dd></div>
+      </dl>
+      <p class="support-dialog-disclaimer">This is an example record from the design, not live support data.</p>
+    </dialog>
+
+    <template id="supportPngFileIcon">
+      <svg width="25.6089" height="33.3333" viewBox="0 0 25.6089 33.3333" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16.0055 0H3.20111C2.35212 0 1.53791 0.351189 0.937582 0.976311C0.337258 1.60143 0 2.44928 0 3.33333V30C0 30.8841 0.337258 31.7319 0.937582 32.357C1.53791 32.9821 2.35212 33.3333 3.20111 33.3333H22.4077C23.2567 33.3333 24.0709 32.9821 24.6713 32.357C25.2716 31.7319 25.6089 30.8841 25.6089 30V10L16.0055 0ZM8.05078 23.5083C7.54981 23.9967 6.81196 24.2183 5.94926 24.2183C5.75719 24.2183 5.58273 24.2067 5.44989 24.1867V26.595H3.99978V19.95C4.6539 19.8473 5.31504 19.801 5.97647 19.8117C6.87758 19.8117 7.5226 19.99 7.95315 20.35C8.36609 20.69 8.64459 21.25 8.64459 21.91C8.64459 22.57 8.43492 23.1283 8.05078 23.5083ZM14.9364 26.5967H13.3998L12.0186 23.9967C11.6344 23.2767 11.2119 22.4083 10.8966 21.6183L10.8662 21.6283C10.9046 22.5186 10.9238 23.4687 10.9238 24.5667V26.5967H9.57931V19.86H11.2871L12.6316 22.3283C13.0157 23.0387 13.3982 23.8787 13.6863 24.6367H13.7167C13.6237 23.7038 13.582 22.7662 13.5919 21.8283V19.8583H14.9364V26.5967ZM21.6091 26.2867C20.9121 26.5269 20.184 26.655 19.4499 26.6667C18.2703 26.6667 17.4156 26.3567 16.8186 25.7567C16.2248 25.1767 15.8983 24.2983 15.9079 23.3083C15.9175 21.0682 17.4812 19.79 19.6036 19.79C20.4375 19.79 21.0825 19.961 21.3978 20.12L21.0921 21.338C20.7368 21.178 20.295 21.048 19.586 21.048C18.3664 21.048 17.4444 21.768 17.4444 23.228C17.4444 24.616 18.2799 25.437 19.4787 25.437C19.8149 25.437 20.0837 25.397 20.199 25.335V23.925H19.2002V22.736H21.6091V26.2867ZM16.0055 11.6667H14.405V3.33333L22.4077 11.6667H16.0055Z" fill="black"/>
+      </svg>
+    </template>
+    <template id="supportPdfFileIcon">
+      <svg width="24.9559" height="35" viewBox="0 0 24.9559 35" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M15.5975 0H3.11949C2.29215 0 1.4987 0.368749 0.913678 1.02513C0.32866 1.6815 0 2.57174 0 3.5V31.5C0 32.4283 0.32866 33.3185 0.913678 33.9749C1.4987 34.6312 2.29215 35 3.11949 35H21.8364C22.6638 35 23.4572 34.6312 24.0423 33.9749C24.6273 33.3185 24.9559 32.4283 24.9559 31.5V10.5L15.5975 0ZM8.57548 24.8325C8.09352 25.34 7.38228 25.5675 6.55405 25.5675C6.39346 25.5695 6.23295 25.5589 6.07365 25.536V28.0315H4.67924V21.1435C5.30853 21.0382 5.94438 20.9902 6.58057 21C7.44935 21 8.06701 21.1855 8.48346 21.5583C8.87963 21.9118 9.14791 22.491 9.14791 23.1735C9.14635 23.8595 8.94358 24.4388 8.57548 24.8325ZM14.5134 27.2038C13.8583 27.8145 12.8617 28.105 11.6435 28.105C10.9135 28.105 10.3973 28.0525 10.0463 28V21.1452C10.6758 21.0422 11.3115 20.9936 11.9477 21C13.1284 21 13.8958 21.238 14.4947 21.7455C15.142 22.2845 15.5475 23.1438 15.5475 24.3775C15.5475 25.7128 15.1124 26.635 14.5134 27.2038ZM20.2767 22.3475H17.8872V23.9417H20.1207V25.2263H17.8872V28.0332H16.474V21.0525H20.2767V22.3475ZM15.5975 12.25H14.0377V3.5L21.8364 12.25H15.5975Z" fill="black"/>
+      </svg>
+    </template>
+    <template id="supportEyeActionIcon">
+      <svg width="23.6236" height="16.6908" viewBox="0 0 23.6236 16.6908" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M11.8118 0C15.1206 0 18.0372 1.60368 20.0824 3.31463C21.1132 4.17703 21.9589 5.0968 22.5578 5.91791C22.8565 6.32748 23.107 6.73057 23.2879 7.10545C23.4524 7.44626 23.6236 7.89064 23.6236 8.34538C23.6236 8.80011 23.4524 9.2445 23.2879 9.58531C23.107 9.96018 22.8565 10.3633 22.5578 10.7728C21.9589 11.594 21.1132 12.5137 20.0824 13.3761C18.0372 15.0871 15.1206 16.6908 11.8118 16.6908C8.50299 16.6908 5.5864 15.0871 3.54124 13.3761C2.5104 12.5137 1.66467 11.594 1.06583 10.7728C0.767132 10.3633 0.516625 9.96018 0.335668 9.58531C0.171166 9.2445 0 8.80011 0 8.34538C0 7.89064 0.171166 7.44626 0.335668 7.10545C0.516625 6.73057 0.767132 6.32748 1.06583 5.91791C1.66467 5.0968 2.5104 4.17703 3.54124 3.31463C5.5864 1.60368 8.50299 0 11.8118 0ZM11.8118 2.38439C9.25016 2.38439 6.85139 3.64268 5.04886 5.15066C4.15601 5.89764 3.44502 6.67716 2.96795 7.33131C2.7288 7.65924 2.5615 7.93797 2.45926 8.14978C2.41484 8.24181 2.39087 8.3062 2.37736 8.34538C2.39087 8.38455 2.41484 8.44894 2.45926 8.54097C2.5615 8.75278 2.7288 9.03151 2.96795 9.35944C3.44502 10.0136 4.15601 10.7931 5.04886 11.5401C6.85139 13.0481 9.25016 14.3064 11.8118 14.3064C14.3735 14.3064 16.7722 13.0481 18.5748 11.5401C19.4676 10.7931 20.1786 10.0136 20.6557 9.35944C20.8948 9.03151 21.0621 8.75278 21.1644 8.54097C21.2086 8.44922 21.2316 8.38458 21.2451 8.34538C21.2316 8.30617 21.2086 8.24153 21.1644 8.14978C21.0621 7.93797 20.8948 7.65924 20.6557 7.33131C20.1786 6.67716 19.4676 5.89764 18.5748 5.15066C16.7722 3.64268 14.3735 2.38439 11.8118 2.38439Z" fill="black"/>
+        <path transform="translate(7.08708 3.578125)" d="M7.08709 4.76879C7.08709 4.13641 6.83802 3.53011 6.39499 3.08295C5.95196 2.63579 5.35126 2.38439 4.72472 2.38439C4.09819 2.38439 3.49749 2.63579 3.05446 3.08295C2.61143 3.53011 2.36236 4.13641 2.36236 4.76879C2.36236 5.40117 2.61143 6.00747 3.05446 6.45463C3.49749 6.90179 4.09819 7.15318 4.72472 7.15318C5.35126 7.15318 5.95196 6.90179 6.39499 6.45463C6.83802 6.00747 7.08709 5.40117 7.08709 4.76879ZM9.44945 4.76879C9.44945 6.03355 8.95131 7.24615 8.06525 8.14047C7.17919 9.03479 5.9778 9.53757 4.72472 9.53757C3.47165 9.53757 2.27025 9.03479 1.3842 8.14047C0.498138 7.24615 0 6.03355 0 4.76879C0 3.50403 0.498138 2.29143 1.3842 1.39711C2.27025 0.502784 3.47165 0 4.72472 0C5.9778 0 7.17919 0.502784 8.06525 1.39711C8.95131 2.29143 9.44945 3.50403 9.44945 4.76879Z" fill="black"/>
+      </svg>
+    </template>
+    <template id="supportDownloadActionIcon">
+      <svg width="17.7177" height="21.4595" viewBox="0 0 17.7177 21.4595" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M0 19.0751V14.3064C0 13.674 0.207558 13.0677 0.576748 12.6205C0.945939 12.1734 1.44652 11.922 1.96863 11.922H3.93727C4.48089 11.922 4.92159 12.4557 4.92159 13.1142C4.92159 13.7726 4.48089 14.3064 3.93727 14.3064H1.96863V19.0751H15.7491V14.3064H13.7804C13.2368 14.3064 12.7961 13.7726 12.7961 13.1142C12.7961 12.4557 13.2368 11.922 13.7804 11.922H15.7491C16.2712 11.922 16.7718 12.1734 17.141 12.6205C17.5102 13.0677 17.7177 13.674 17.7177 14.3064V19.0751C17.7177 19.7075 17.5102 20.3138 17.141 20.761C16.7718 21.2081 16.2712 21.4595 15.7491 21.4595H1.96863C1.44652 21.4595 0.94594 21.2081 0.576748 20.761C0.207558 20.3138 0 19.7075 0 19.0751ZM13.7901 15.4986C14.3337 15.4986 14.7744 16.0323 14.7744 16.6908C14.7744 17.3492 14.3337 17.8829 13.7901 17.8829H13.7804C13.2368 17.8829 12.7961 17.3492 12.7961 16.6908C12.7961 16.0323 13.2368 15.4986 13.7804 15.4986H13.7901ZM7.87454 1.1922C7.87454 0.533765 8.31523 0 8.85886 0C9.40248 0 9.84317 0.533765 9.84317 1.1922V9.71454L12.0271 6.40806C12.3667 5.89391 12.9868 5.81046 13.4113 6.22178C13.8358 6.63309 13.9047 7.38415 13.5651 7.8983L9.62785 13.8593C9.44106 14.1421 9.15788 14.3064 8.85886 14.3064C8.55984 14.3064 8.27665 14.1421 8.08986 13.8593L4.15259 7.8983C3.81299 7.38415 3.88189 6.63309 4.30639 6.22178C4.73089 5.81046 5.35099 5.89391 5.69058 6.40806L7.87454 9.71454V1.1922Z" fill="black"/>
+      </svg>
+    </template>
+    <template id="supportTrashActionIcon">
+      <svg width="17.7177" height="23.8439" viewBox="0 0 17.7177 23.8439" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M11.1024 0V0.00116425C11.5155 0.00117799 11.9179 0.158007 12.253 0.450566C12.5883 0.743295 12.8395 1.15614 12.9701 1.63112L13.5055 3.57659H16.7334C17.277 3.57659 17.7177 4.11035 17.7177 4.76879C17.7177 5.42722 17.277 5.96098 16.7334 5.96098H16.67L15.8683 20.5049C15.8185 21.4099 15.4865 22.2589 14.9397 22.8788C14.3928 23.4987 13.6711 23.8437 12.922 23.8439H4.79278C4.04403 23.8432 3.32361 23.4974 2.77704 22.8776C2.23055 22.2578 1.89827 21.4097 1.84848 20.5049L1.04776 5.96098H0.984317C0.440694 5.96098 0 5.42722 0 4.76879C0 4.11035 0.440694 3.57659 0.984317 3.57659H4.21219L4.7476 1.63112L4.80239 1.45532C4.94249 1.05426 5.17141 0.70659 5.46469 0.450566C5.79985 0.158007 6.20218 0.00117811 6.6153 0.00116425V0H11.1024ZM3.81327 20.3465C3.82987 20.6481 3.94062 20.9304 4.12279 21.137C4.30499 21.3437 4.54511 21.4593 4.7947 21.4595H12.922L13.0153 21.4537C13.2308 21.4287 13.4346 21.3187 13.594 21.1382C13.7763 20.9316 13.8869 20.6483 13.9035 20.3465L14.6965 5.96098H3.0212L3.81327 20.3465ZM5.9059 16.6908V10.7298C5.9059 10.0713 6.3466 9.53757 6.89022 9.53757C7.43384 9.53757 7.87454 10.0713 7.87454 10.7298V16.6908C7.87454 17.3492 7.43384 17.8829 6.89022 17.8829C6.3466 17.8829 5.9059 17.3492 5.9059 16.6908ZM9.84317 16.6908V10.7298C9.84317 10.0713 10.2839 9.53757 10.8275 9.53757C11.3711 9.53757 11.8118 10.0713 11.8118 10.7298V16.6908C11.8118 17.3492 11.3711 17.8829 10.8275 17.8829C10.2839 17.8829 9.84317 17.3492 9.84317 16.6908ZM6.28752 3.57659H11.4302L11.1024 2.38439H6.6153L6.28752 3.57659Z" fill="black"/>
+      </svg>
+    </template>
   </main>
+
   <script src="support.js"></script>
 </body>
 </html>
