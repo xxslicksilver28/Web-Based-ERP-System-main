@@ -9,7 +9,19 @@ const dropzone = document.querySelector('#supportDropzone');
 const fileFeedback = document.querySelector('#supportFileFeedback');
 const attachmentList = document.querySelector('#supportAttachmentList');
 const submitStatus = document.querySelector('#supportSubmitStatus');
-const ticketDialog = document.querySelector('#supportTicketDialog');
+const supportPage = document.querySelector('.support-page');
+const ticketDetail = document.querySelector('#supportTicketDetail');
+const detailBack = document.querySelector('#supportDetailBack');
+const detailMeta = document.querySelector('#supportDetailMeta');
+const detailTitle = document.querySelector('#supportDetailTitle');
+const detailSampleNote = document.querySelector('#supportDetailSampleNote');
+const sampleRequest = document.querySelector('#supportSampleRequest');
+const sampleResponse = document.querySelector('#supportSampleResponse');
+const noDetails = document.querySelector('#supportNoDetails');
+const noDetailsCategory = document.querySelector('#supportNoDetailsCategory');
+const detailActionStatus = document.querySelector('#supportDetailActionStatus');
+const replyForm = document.querySelector('#supportReplyForm');
+let listScrollPosition = 0;
 const maxFileSize = 20 * 1024 * 1024;
 const allowedExtensions = new Set(['doc', 'docx', 'xls', 'xlsx', 'pdf', 'jpg', 'jpeg', 'png']);
 const attachments = [
@@ -250,13 +262,48 @@ document.querySelector('.support-requests-table').addEventListener('click', even
   if (!button) return;
 
   const row = button.closest('tr');
+  if (!row) return;
   const cells = row.querySelectorAll('td');
-  document.querySelector('#supportDialogTicket').textContent = cells[0].textContent;
-  document.querySelector('#supportDialogSubject').textContent = cells[1].textContent;
-  document.querySelector('#supportDialogCategory').textContent = cells[2].textContent;
-  document.querySelector('#supportDialogDate').textContent = cells[3].textContent;
-  document.querySelector('#supportDialogStatus').textContent = cells[4].textContent.trim();
-  ticketDialog.showModal();
+  const ticketId = row.dataset.ticketId || cells[0].textContent.trim();
+  const ticketDate = cells[3].querySelector('time')?.textContent.trim() || cells[3].textContent.trim();
+  const isSampleDetail = ticketId === 'SUP-0001';
+
+  listScrollPosition = supportPage.scrollTop;
+  detailMeta.textContent = isSampleDetail
+    ? 'SUP-0001 · Submitted Oct 1, 2025 at 10:34 AM'
+    : `${ticketId} · Submitted ${ticketDate}`;
+  detailTitle.textContent = isSampleDetail ? 'Unable to submit RFQ' : cells[1].textContent.trim();
+  noDetailsCategory.textContent = cells[2].textContent.trim();
+  detailSampleNote.textContent = isSampleDetail
+    ? 'Sample record — all details shown here are illustrative and are not connected to live support data.'
+    : 'Sample list record — request details and support conversation are not available.';
+  sampleRequest.hidden = !isSampleDetail;
+  sampleResponse.hidden = !isSampleDetail;
+  noDetails.hidden = isSampleDetail;
+  detailActionStatus.hidden = true;
+  detailActionStatus.textContent = '';
+  ticketDetail.hidden = false;
+  supportPage.classList.add('is-detail');
+  supportPage.scrollTop = 0;
+});
+
+detailBack.addEventListener('click', () => {
+  ticketDetail.hidden = true;
+  supportPage.classList.remove('is-detail');
+  supportPage.scrollTop = listScrollPosition;
+});
+
+document.querySelectorAll('[data-sample-download]').forEach(button => {
+  button.addEventListener('click', () => {
+    detailActionStatus.textContent = `${button.dataset.sampleDownload} is a sample attachment. The file is unavailable, so nothing was downloaded.`;
+    detailActionStatus.hidden = false;
+  });
+});
+
+replyForm.addEventListener('submit', event => {
+  event.preventDefault();
+  document.querySelector('#supportReplyStatus').textContent =
+    'This is a sample ticket. Your reply has not been sent.';
 });
 
 contactForm.addEventListener('submit', event => {

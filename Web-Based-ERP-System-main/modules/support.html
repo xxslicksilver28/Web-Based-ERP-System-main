@@ -121,7 +121,7 @@
               <td>Purchase Request</td>
               <td><time datetime="2025-10-01">Oct 1, 2025</time></td>
               <td><span class="support-status support-status-open">Open</span></td>
-              <td><button class="support-ticket-view" type="button" aria-haspopup="dialog">View</button></td>
+              <td><button class="support-ticket-view" type="button" aria-controls="supportTicketDetail">View</button></td>
             </tr>
             <tr data-ticket-id="SUP-0002">
               <td>SUP-0002</td>
@@ -129,7 +129,7 @@
               <td>Purchase Request</td>
               <td><time datetime="2025-09-29">Sep 29, 2025</time></td>
               <td><span class="support-status support-status-resolved">Resolved</span></td>
-              <td><button class="support-ticket-view" type="button" aria-haspopup="dialog">View</button></td>
+              <td><button class="support-ticket-view" type="button" aria-controls="supportTicketDetail">View</button></td>
             </tr>
           </tbody>
         </table>
@@ -194,20 +194,91 @@
       </form>
     </section>
 
-    <dialog class="support-ticket-dialog" id="supportTicketDialog" aria-labelledby="supportTicketDialogTitle">
-      <form method="dialog">
-        <button class="support-dialog-close" type="submit" aria-label="Close request details">×</button>
-      </form>
-      <h2 id="supportTicketDialogTitle">Support request</h2>
-      <dl>
-        <div><dt>Ticket no.</dt><dd id="supportDialogTicket"></dd></div>
-        <div><dt>Subject</dt><dd id="supportDialogSubject"></dd></div>
-        <div><dt>Category</dt><dd id="supportDialogCategory"></dd></div>
-        <div><dt>Date</dt><dd id="supportDialogDate"></dd></div>
-        <div><dt>Status</dt><dd id="supportDialogStatus"></dd></div>
-      </dl>
-      <p class="support-dialog-disclaimer">This is an example record from the design, not live support data.</p>
-    </dialog>
+    <section class="support-ticket-detail" id="supportTicketDetail" aria-labelledby="supportDetailTitle" hidden>
+      <div class="support-detail-overview">
+      <button class="support-detail-back" id="supportDetailBack" type="button" aria-label="Back to support requests">
+        <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="27.5" cy="27.5" r="27" fill="white" stroke="#726E6E"/>
+          <path d="M31.2469 18.5244C31.1692 18.4508 31.0761 18.3916 30.973 18.3502C30.8699 18.3088 30.7588 18.286 30.6462 18.2831C30.5335 18.2803 30.4214 18.2974 30.3163 18.3335C30.2113 18.3696 30.1153 18.424 30.0339 18.4936L19.5196 27.459C19.438 27.5284 19.3726 27.6116 19.327 27.7039C19.2814 27.7963 19.2567 27.8958 19.2541 27.997C19.2515 28.0981 19.2712 28.1988 19.312 28.2933C19.3528 28.3878 19.414 28.4743 19.4919 28.5477L29.5372 38.0358C29.6944 38.1842 29.9105 38.2709 30.1379 38.2767C30.3654 38.2824 30.5857 38.2069 30.7502 38.0666C30.9147 37.9263 31.0101 37.7328 31.0152 37.5286C31.0204 37.3244 30.935 37.1263 30.7779 36.9778L21.3236 28.0496L31.2192 19.6132C31.3008 19.5438 31.3663 19.4605 31.4118 19.3682C31.4574 19.2759 31.4822 19.1763 31.4848 19.0752C31.4873 18.9741 31.4676 18.8734 31.4268 18.7788C31.386 18.6843 31.3249 18.5979 31.2469 18.5244Z" fill="black"/>
+        </svg>
+      </button>
+      <p class="support-detail-meta" id="supportDetailMeta"></p>
+      <h1 class="support-detail-title" id="supportDetailTitle"></h1>
+      <p class="support-detail-sample-note" id="supportDetailSampleNote"></p>
+
+      <article class="support-request-card" id="supportSampleRequest" hidden>
+        <h2>Your request</h2>
+        <dl class="support-request-fields">
+          <div>
+            <dt>Issue category</dt>
+            <dd>RFQ Workspace</dd>
+          </div>
+          <div>
+            <dt>Related transaction</dt>
+            <dd class="support-related-transaction">RFQ-0042</dd>
+          </div>
+        </dl>
+        <div class="support-request-description">
+          <span>Description</span>
+          <p>I completed the RFQ settings and selected three suppliers, but the Submit RFQ button returns an error after I confirm. Please help me send this RFQ before the sourcing deadline.</p>
+        </div>
+        <div class="support-detail-attachments">
+          <h3>Attachments</h3>
+          <div class="support-detail-attachment">
+            <svg class="support-detail-file-icon" width="26.6667" height="35.42" viewBox="0 0 26.6667 35.42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16.6667 0H3.33333C2.44928 0 1.60143 0.351189 0.976311 0.976311C0.351189 1.60143 0 2.44928 0 3.33333V30C0 30.8841 0.351189 31.7319 0.976311 32.357C1.60143 32.9821 2.44928 33.3333 3.33333 33.3333H23.3333C24.2174 33.3333 25.0652 32.9821 25.6904 32.357C26.3155 31.7319 26.6667 30.8841 26.6667 30V10L16.6667 0ZM8.38333 23.5083C7.86167 23.9967 7.09333 24.2183 6.195 24.2183C5.995 24.2183 5.81333 24.2067 5.675 24.1867V26.595H4.165V19.95C4.84613 19.8473 5.53458 19.801 6.22333 19.8117C7.16167 19.8117 7.83333 19.99 8.28167 20.35C8.71167 20.69 9.00167 21.25 9.00167 21.91C9.00167 22.57 8.78333 23.1283 8.38333 23.5083ZM15.5533 26.5967H13.9533L12.515 23.9967C12.115 23.2767 11.675 22.4083 11.3467 21.6183L11.315 21.6283C11.355 22.5183 11.375 23.4687 11.375 24.5667V26.5967H9.975V19.86H11.7533L13.1533 22.3283C13.5533 23.0387 13.9517 23.8787 14.2517 24.6367H14.2833C14.1865 23.7038 14.143 22.7662 14.1533 21.8283V19.8583H15.5533V26.5967ZM22.5017 26.2867C21.7759 26.5269 21.0177 26.655 20.2533 26.6667C19.025 26.6667 18.135 26.3567 17.5133 25.7567C16.895 25.1767 16.555 24.2983 16.565 23.3083C16.575 21.0683 18.2033 19.79 20.4133 19.79C21.2817 19.79 21.9533 19.9617 22.2817 20.12L21.9633 21.3383C21.5933 21.1783 21.1333 21.048 20.395 21.048C19.125 21.048 18.165 21.768 18.165 23.228C18.165 24.616 19.035 25.4367 20.2833 25.4367C20.6333 25.4367 20.9133 25.3967 21.0333 25.335V23.925H19.9933V22.7367H22.5017V26.2867ZM16.6667 11.6667H15V3.33333L23.3333 11.6667H16.6667Z" fill="black"/>
+              <path d="M5.62833 21.2109C5.31833 21.2109 5.10833 21.2409 5 21.2709V23.2593C5.12833 23.2893 5.29 23.2976 5.51 23.2976C6.31833 23.2976 6.81833 22.8876 6.81833 22.1993C6.81833 21.5809 6.38833 21.2109 5.62833 21.2109Z" fill="black"/>
+            </svg>
+            <span class="support-detail-file-copy"><strong>RFQ_Error_Screenshot.png</strong><small>PNG · 1.2 MB</small></span>
+            <button type="button" class="support-detail-download" data-sample-download="RFQ_Error_Screenshot.png" aria-label="Download RFQ_Error_Screenshot.png">
+              <svg width="19.938" height="21.4595" viewBox="0 0 19.938 21.4595" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 19.0751V14.3064C0 13.674 0.233568 13.0677 0.649022 12.6205C1.06448 12.1734 1.62779 11.922 2.21533 11.922H4.43066C5.0424 11.922 5.53832 12.4557 5.53832 13.1142C5.53832 13.7726 5.0424 14.3064 4.43066 14.3064H2.21533V19.0751H17.7226V14.3064H15.5073C14.8956 14.3064 14.3996 13.7726 14.3996 13.1142C14.3996 12.4557 14.8956 11.922 15.5073 11.922H17.7226C18.3102 11.922 18.8735 12.1734 19.2889 12.6205C19.7044 13.0677 19.938 13.674 19.938 14.3064V19.0751C19.938 19.7075 19.7044 20.3138 19.2889 20.761C18.8735 21.2081 18.3102 21.4595 17.7226 21.4595H2.21533C1.62779 21.4595 1.06448 21.2081 0.649022 20.761C0.233568 20.3138 0 19.7075 0 19.0751ZM15.5181 15.4986C16.1299 15.4986 16.6258 16.0323 16.6258 16.6908C16.6258 17.3492 16.1299 17.8829 15.5181 17.8829H15.5073C14.8956 17.8829 14.3996 17.3492 14.3996 16.6908C14.3996 16.0323 14.8956 15.4986 15.5073 15.4986H15.5181ZM8.86131 1.1922C8.86131 0.533765 9.35723 0 9.96898 0C10.5807 0 11.0766 0.533765 11.0766 1.1922V9.71454L13.5343 6.40806C13.9164 5.89391 14.6142 5.81046 15.0919 6.22178C15.5696 6.6331 15.6472 7.38415 15.265 7.8983L10.8343 13.8593C10.6241 14.1421 10.3055 14.3064 9.96898 14.3064C9.63249 14.3064 9.31382 14.1421 9.10362 13.8593L4.67296 7.8983C4.2908 7.38415 4.36834 6.6331 4.84603 6.22178C5.32372 5.81046 6.02153 5.89391 6.40368 6.40806L8.86131 9.71454V1.1922Z" fill="black"/>
+              </svg>
+            </button>
+          </div>
+          <div class="support-detail-attachment">
+            <svg class="support-detail-file-icon" width="26.6667" height="35.42" viewBox="0 0 26.6667 35.42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16.6667 0H3.33333C2.44928 0 1.60143 0.351189 0.976311 0.976311C0.351189 1.60143 0 2.44928 0 3.33333V30C0 30.8841 0.351189 31.7319 0.976311 32.357C1.60143 32.9821 2.44928 33.3333 3.33333 33.3333H23.3333C24.2174 33.3333 25.0652 32.9821 25.6904 32.357C26.3155 31.7319 26.6667 30.8841 26.6667 30V10L16.6667 0ZM8.38333 23.5083C7.86167 23.9967 7.09333 24.2183 6.195 24.2183C5.995 24.2183 5.81333 24.2067 5.675 24.1867V26.595H4.165V19.95C4.84613 19.8473 5.53458 19.801 6.22333 19.8117C7.16167 19.8117 7.83333 19.99 8.28167 20.35C8.71167 20.69 9.00167 21.25 9.00167 21.91C9.00167 22.57 8.78333 23.1283 8.38333 23.5083ZM15.5533 26.5967H13.9533L12.515 23.9967C12.115 23.2767 11.675 22.4083 11.3467 21.6183L11.315 21.6283C11.355 22.5183 11.375 23.4687 11.375 24.5667V26.5967H9.975V19.86H11.7533L13.1533 22.3283C13.5533 23.0387 13.9517 23.8787 14.2517 24.6367H14.2833C14.1865 23.7038 14.143 22.7662 14.1533 21.8283V19.8583H15.5533V26.5967ZM22.5017 26.2867C21.7759 26.5269 21.0177 26.655 20.2533 26.6667C19.025 26.6667 18.135 26.3567 17.5133 25.7567C16.895 25.1767 16.555 24.2983 16.565 23.3083C16.575 21.0683 18.2033 19.79 20.4133 19.79C21.2817 19.79 21.9533 19.9617 22.2817 20.12L21.9633 21.3383C21.5933 21.1783 21.1333 21.048 20.395 21.048C19.125 21.048 18.165 21.768 18.165 23.228C18.165 24.616 19.035 25.4367 20.2833 25.4367C20.6333 25.4367 20.9133 25.3967 21.0333 25.335V23.925H19.9933V22.7367H22.5017V26.2867ZM16.6667 11.6667H15V3.33333L23.3333 11.6667H16.6667Z" fill="black"/>
+              <path d="M5.62833 21.2109C5.31833 21.2109 5.10833 21.2409 5 21.2709V23.2593C5.12833 23.2893 5.29 23.2976 5.51 23.2976C6.31833 23.2976 6.81833 22.8876 6.81833 22.1993C6.81833 21.5809 6.38833 21.2109 5.62833 21.2109Z" fill="black"/>
+            </svg>
+            <span class="support-detail-file-copy"><strong>Supplier_Quotation.pdf</strong><small>PDF · 1.3 MB</small></span>
+            <button type="button" class="support-detail-download" data-sample-download="Supplier_Quotation.pdf" aria-label="Download Supplier_Quotation.pdf">
+              <svg width="19.8394" height="21.4595" viewBox="0 0 19.8394 21.4595" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 19.0751V14.3064C0 13.674 0.232414 13.0677 0.645814 12.6205C1.05922 12.1734 1.61974 11.922 2.20438 11.922H4.40876C5.01748 11.922 5.51095 12.4557 5.51095 13.1142C5.51095 13.7726 5.01748 14.3064 4.40876 14.3064H2.20438V19.0751H17.635V14.3064H15.4307C14.8219 14.3064 14.3285 13.7726 14.3285 13.1142C14.3285 12.4557 14.8219 11.922 15.4307 11.922H17.635C18.2197 11.922 18.7802 12.1734 19.1936 12.6205C19.607 13.0677 19.8394 13.674 19.8394 14.3064V19.0751C19.8394 19.7075 19.607 20.3138 19.1936 20.761C18.7802 21.2081 18.2197 21.4595 17.635 21.4595H2.20438C1.61974 21.4595 1.05922 21.2081 0.645814 20.761C0.232413 20.3138 0 19.7075 0 19.0751ZM15.4414 15.4986C16.0501 15.4986 16.5436 16.0323 16.5436 16.6908C16.5436 17.3492 16.0501 17.8829 15.4414 17.8829H15.4307C14.8219 17.8829 14.3285 17.3492 14.3285 16.6908C14.3285 16.0323 14.8219 15.4986 15.4307 15.4986H15.4414ZM8.81752 1.1922C8.81752 0.533765 9.31099 0 9.91971 0C10.5284 0 11.0219 0.533765 11.0219 1.1922V9.71454L13.4674 6.40806C13.8476 5.89391 14.542 5.81046 15.0173 6.22178C15.4927 6.6331 15.5698 7.38415 15.1896 7.8983L10.7808 13.8593C10.5716 14.1421 10.2545 14.3064 9.91971 14.3064C9.58488 14.3064 9.26779 14.1421 9.05862 13.8593L4.64986 7.8983C4.2696 7.38415 4.34675 6.6331 4.82208 6.22178C5.29741 5.81046 5.99177 5.89391 6.37203 6.40806L8.81752 9.71454V1.1922Z" fill="black"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+      </div>
+
+      <article class="support-response-card" id="supportSampleResponse" hidden>
+        <header class="support-response-heading">
+          <h2>Support response</h2>
+          <span>Last updated 28 minutes ago</span>
+        </header>
+        <div class="support-response-message">
+          <span class="support-response-avatar" aria-hidden="true">ST</span>
+          <div class="support-response-body">
+            <div class="support-response-author"><strong>Support team</strong><time>11:06 AM</time></div>
+            <p>We are checking the RFQ validation log for RFQ-0042. Please keep the RFQ in draft while we investigate; we will update this ticket shortly.</p>
+          </div>
+        </div>
+        <form class="support-reply-form" id="supportReplyForm">
+          <label for="supportReply">Reply to support</label>
+          <textarea id="supportReply" placeholder="Add information or answer the support team..."></textarea>
+          <p class="support-reply-status" id="supportReplyStatus" role="status" aria-live="polite"></p>
+          <button type="submit">Send reply</button>
+        </form>
+      </article>
+
+      <div class="support-no-details" id="supportNoDetails" hidden>
+        <h2>Details aren't available</h2>
+        <p>This ticket is a sample list entry. Its request details and support conversation are not available.</p>
+        <p><strong>Category:</strong> <span id="supportNoDetailsCategory"></span></p>
+      </div>
+      <p class="support-detail-action-status" id="supportDetailActionStatus" role="status" aria-live="polite" hidden></p>
+    </section>
 
     <template id="supportPngFileIcon">
       <svg width="25.6089" height="33.3333" viewBox="0 0 25.6089 33.3333" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
