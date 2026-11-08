@@ -3,12 +3,6 @@ const $ = (selector, root = document) => root.querySelector(selector);
 
 const storageKey = 'uniprocur.suppliers';
 const defaultSuppliers = [
-  { id: 'supplier-1', name: 'ABC Trading Co.', contact: 'Angela Cruz', email: 'angela@abctrading.com', phone: '+63 2 8123 4567', address: 'Manila' },
-  { id: 'supplier-2', name: 'Global Supplies Inc.', contact: 'Robert Lim', email: 'robert@globalsupplies.com', phone: '+63 2 8234 5678', address: 'Quezon City' },
-  { id: 'supplier-3', name: 'Tech Solutions Ltd.', contact: 'Karen Tan', email: 'karen@techsolutions.com', phone: '+63 2 8345 6789', address: 'Makati City' },
-  { id: 'supplier-4', name: 'Prime Industrial Corp.', contact: 'Miguel Reyes', email: 'miguel@primeindustrial.com', phone: '+63 2 8456 7890', address: 'Pasig City' },
-  { id: 'supplier-5', name: 'Metro Office Supplies', contact: 'Liza Santos', email: 'liza@metrooffice.com', phone: '+63 2 8567 8901', address: 'Manila' },
-  { id: 'supplier-6', name: 'Pacific Hardware', contact: 'John Dela Cruz', email: 'john@pacifichardware.com', phone: '+63 2 8678 9012', address: 'Cebu City' }
 ];
 let suppliers;
 let toastTimer;
